@@ -1,5 +1,6 @@
 import React from 'react';
 import {Menu} from "../../App.tsx";
+import "./buttons.css"
 
 interface FoodProps {
     addFood: (food: Menu) => void
@@ -15,10 +16,10 @@ const ButtonFood:React.FC<FoodProps> = ({addFood}) => {
         { name: 'Cola', price: 40, quantity: 0 },
     ]
     return (
-        <div>
+        <div className="btn-block">
             {
                 foods.map((food) => (
-                    <button key={food.name} onClick={() => addFood(food)}>
+                    <button className="btn" key={food.name} onClick={() => addFood(food)}>
                         <p>{food.name}</p>
                         <p>Price: {food.price}</p>
                     </button>

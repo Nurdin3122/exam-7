@@ -14,11 +14,7 @@ export interface Menu {
 const App = () => {
   const [order,setOrder] = useState<Menu[]>([])
 
-
-
-
   const getOrder = (food:Menu) => {
-    console.log(food)
     setOrder((prevOrder) => {
       const existingItem = prevOrder.find((orderItem) => orderItem.name === food.name)
       if (existingItem) {
@@ -32,8 +28,8 @@ const App = () => {
     })
   }
 
-  const click2 = () => {
-
+  const click2 = (foodName:string) => {
+    setOrder((prevOrder) => prevOrder.filter((food) => food.name !== foodName))
   }
 
 
