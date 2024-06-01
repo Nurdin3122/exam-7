@@ -9,13 +9,10 @@ interface Order {
 const OrderList:React.FC<Order> = ({food,removeFood}) => {
     return (
         <div>
-            <li className="order-item">
-                <span>{food.name}</span>
-                <span>Quantity: {food.quantity}</span>
-                <span>Price: {food.price * food.quantity} KGS</span>
+                <p>{food.name}</p>
+                <p> Quantity: {food.quantity}</p>
+                <p>Price: {food.price * food.quantity} KGS</p>
                 <button onClick={() => removeFood(food.name)}>Remove</button>
-            </li>
-
         </div>
     );
 };
